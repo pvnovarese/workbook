@@ -25,6 +25,9 @@ Server:
  Experimental: true
 ```
 
+and I have a few images ready to dork around with:
+
+```
 pvn@gyarados /home/pvn> docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 pvnovarese/mprime        latest              459769dbc7a1        12 days ago         4.461 MB
@@ -33,6 +36,7 @@ pvnovarese/debug         latest              1b8cc940d2c6        2 weeks ago    
 sysdig/sysdig            latest              7deee9c45f7f        2 weeks ago         552.6 MB
 busybox                  latest              d9551b4026f0        3 weeks ago         1.113 MB
 alpine                   latest              558af09712a4        3 months ago        5.244 MB
+```
 
 OK, let's start the engine with user namespaces active.  First thing is to make sure we've got entries in passwd and the /etc/sub*id files:
 
