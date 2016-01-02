@@ -12,3 +12,9 @@ pvn@gyarados /home/pvn> docker run -it --rm alpine /bin/sh
 ```
 
 need to figure out syntax for seccomp security-opt.  What I tried above was from https://www.youtube.com/watch?v=sw3NjVMMXz8 which is really old.
+
+need to review
+
+https://github.com/docker/docker/blob/master/docs/security/seccomp.md
+
+https://github.com/docker/docker/issues/17142
