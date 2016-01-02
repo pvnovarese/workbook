@@ -20,3 +20,5 @@ https://github.com/docker/docker/blob/master/docs/security/seccomp.md
 https://github.com/docker/docker/issues/17142
 
 https://www.youtube.com/watch?v=sw3NjVMMXz8
+
+https://github.com/jfrazelle/dotfiles/blob/master/etc/docker/seccomp/chrome.json
