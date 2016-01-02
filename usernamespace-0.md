@@ -116,3 +116,9 @@ pvn@gyarados /home/pvn> ps aux | grep [m]prime
 ```
 
 Note processes in both containers are using the same UID.  
+
+
+
+notes:
+
+http://integratedcode.us/2015/10/13/user-namespaces-have-arrived-in-docker/
