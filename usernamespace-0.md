@@ -90,8 +90,8 @@ a3ed95caeb02: Pull complete
 Digest: sha256:0b315a681a6b9f14f93ab34f3c744fd547bda30a03b55263d93861671fa33b00
 Status: Downloaded newer image for pvnovarese/mprime:latest
 
-pvn@gyarados /home/pvn> docker run -d pvnovarese/mprime:latest
-d1c5bfd2ae77bb57fc536677defb966489b11f886429014cdf7f729c43c98348
+pvn@gyarados /home/pvn/> docker run -d --name=mprime0 pvnovarese/mprime:latest
+d460aeea507417388cafef7ffab1dc2267d0a6f4953215387dbdd1f4174ad669
 
 pvn@gyarados /home/pvn> ps aux | grep [m]prime
 200000   27395 99.1  0.0  15224 11328 ?        RNs  09:41   0:59 /mprime -t
@@ -99,4 +99,20 @@ pvn@gyarados /home/pvn> ps aux | grep [m]prime
 
 sweet, it's working.
 
+However, if we run multiple containers...
 
+```
+pvn@gyarados /home/pvn/Docker_Lab/workbook> docker run -d --name=mprime1 pvnovarese/mprime:latest
+0488c83798c901225d4947c5d13dba30a259cda2fdee14341d529bdd0e3f3674
+
+pvn@gyarados /home/pvn/Docker_Lab/workbook> docker ps
+CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS              PORTS               NAMES
+0488c83798c9        pvnovarese/mprime:latest   "/mprime -t"        13 minutes ago      Up 13 minutes                           mprime1
+d460aeea5074        pvnovarese/mprime:latest   "/mprime -t"        13 minutes ago      Up 13 minutes                           mprime0
+
+pvn@gyarados /home/pvn/Docker_Lab/workbook> ps aux | grep [m]prime
+200000   14719 99.8  0.0  15224 11604 ?        RNs  10:03  13:44 /mprime -t
+200000   14908 99.7  0.0  15224 11632 ?        RNs  10:03  13:20 /mprime -t
+```
+
+Note processes in both containers are using the same UID.  
