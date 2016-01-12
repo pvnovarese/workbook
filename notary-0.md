@@ -92,7 +92,7 @@ hello-world              <none>              690ed74de00f        12 weeks ago   
 jpetazzo/clock           latest              12068b93616f        10 months ago       2.43 MB
 ```
 
-In this case, the reference with the `<none>` tag is the signed reference.  You can see this more explicitly with the `digests=true` option.
+In this case, the reference with the `<none>` tag is the signed reference.  You can see this more explicitly with the `--digests=true` option.
 ```
 pvn@gyarados /home/pvn> docker images --digests=true
 REPOSITORY               TAG                 DIGEST                                                                    IMAGE ID            CREATED             SIZE
