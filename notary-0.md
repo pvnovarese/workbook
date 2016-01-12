@@ -31,7 +31,9 @@ First, enable DCT by setting the environment variable
 ```
 pvn@gyarados /home/pvn> export DOCKER_CONTENT_TRUST=1
 ``` 
-Try to pull unsigned content
+
+Try to pull unsigned content:
+
 ```
 pvn@gyarados /home/pvn> docker pull jpetazzo/clock
 Using default tag: latest
