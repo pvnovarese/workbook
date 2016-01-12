@@ -27,10 +27,11 @@ For more in-depth examples and advanced concepts refer to the Docker documentati
 
 ## Phase 1: get familiar with DCT and verifying pulls
 
-First, enable DCT by setting the environment variable
+First, enable DCT by setting the environment variable:
 
 ```
 pvn@gyarados /home/pvn> export DOCKER_CONTENT_TRUST=1
+
 ``` 
 
 Try to pull unsigned content:
