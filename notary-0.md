@@ -1,4 +1,4 @@
-# experimenting with Notary and Docker Content Trust
+# Experimenting with Notary and Docker Content Trust
 
 ## What is Docker Content Trust?
 
