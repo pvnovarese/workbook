@@ -42,6 +42,7 @@ no trust data available
 ```
 
 Operations without trust data will fail. You can temporarily disable content trust to pull unsigned content:
+
 ```
 pvn@gyarados /home/pvn> docker pull --disable-content-trust jpetazzo/clock
 Using default tag: latest
@@ -50,7 +51,8 @@ a3ed95caeb02: Pull complete
 1db09adb5ddd: Pull complete
 Digest: sha256:446edaa1594798d89ee2a93f660161b265db91b026491e4671c14371eff5eea0
 Status: Downloaded newer image for jpetazzo/clock:latest
-``` 
+```
+
 Enable debug mode to compare default and signed pulls
 
 ```
