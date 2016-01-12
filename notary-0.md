@@ -12,9 +12,9 @@ For more in-depth examples and advanced concepts refer to the Docker documentati
 - [Automation Systems](https://docs.docker.com/security/trust/trust_automation/)
 - [Understanding and Managing Keys](https://docs.docker.com/security/trust/trust_key_mng/)
 - [Personal Sandbox](https://docs.docker.com/security/trust/trust_sandbox/)
-	•	https://www.docker.com/docker-security 
-	•	https://github.com/docker/notary
-	•	http://blog.docker.com/2015/08/content-trust-docker-1-8/
+- https://www.docker.com/docker-security 
+- https://github.com/docker/notary
+- http://blog.docker.com/2015/08/content-trust-docker-1-8/
 
 
 ## Prerequisites
@@ -70,9 +70,9 @@ Deleted: sha256:690ed74de00f99a7d00a98a5ad855ac4febd66412be132438f9b8dbd300a937d
 
 pvn@gyarados /home/pvn> docker -D pull hello-world
 Using default tag: latest
- …
+ ...
  [debug output snipped]
- …
+ ...
 DEBU[0002] successfully verified targets
 Pull (1 of 1): hello-world:latest@sha256:8be990ef2aeb16dbcb9271ddfe2610fa6658d13f6dfb8bc72074cc1ca36966a7
 sha256:8be990ef2aeb16dbcb9271ddfe2610fa6658d13f6dfb8bc72074cc1ca36966a7: Pulling from library/hello-world
@@ -83,7 +83,7 @@ Status: Downloaded newer image for hello-world@sha256:8be990ef2aeb16dbcb9271ddfe
 Tagging hello-world@sha256:8be990ef2aeb16dbcb9271ddfe2610fa6658d13f6dfb8bc72074cc1ca36966a7 as hello-world:latest
 ```
 
-At this point you’ll notice your docker images output looks a little different than usual.
+At this point you'll notice your docker images output looks a little different than usual.
 ```
 pvn@gyarados /home/pvn> docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
@@ -105,7 +105,7 @@ jpetazzo/clock           latest              <none>                             
 ## Phase 2: Registry operations with Docker Content Trust
 
 
-We are going to use the hello-world image we pulled in the previous exercise to compare signed and unsigned pushes into our user namespace in Docker Hub.
+We are going to use the `hello-world` image we pulled in the previous exercise to compare signed and unsigned pushes into our user namespace in Docker Hub.
 
 
 Login to Hub with Engine 1.8 or newer.
@@ -115,24 +115,24 @@ pvn@gyarados /home/pvn> docker login
 Username: <username>
 Password: <password>
 Email: <email>
-WARNING: login credentials saved in /home/ubuntu/.docker/config.json
+WARNING: login credentials saved in /home/pvn/.docker/config.json
 Login Succeeded 
 ```
 
-Make sure content trust is disabled, then re-tag the hello-world image so we can push it into our own namespace.
+Make sure content trust is disabled, then re-tag the `hello-world` image so we can push it into our own namespace.
 
 ```
 pvn@gyarados /home/pvn>  unset DOCKER_CONTENT_TRUST
 pvn@gyarados /home/pvn>  docker tag hello-world <username>/trust-test:latest
 ```
 
-When we push the image, note that the -D flag will enable debug output if you want to see more details on what’s happening.  For unsigned pushes this is not going to reveal much, but when we do signed pushes we’ll see a lot more detail.
+When we push the image, note that the `-D` flag will enable debug output if you want to see more details on what's happening.  For unsigned pushes this is not going to reveal much, but when we do signed pushes we'll see a lot more detail.
 
 ```
 pvn@gyarados /home/pvn> docker -D push <username>/trust-test:latest
 ```
 
-Now, let’s re-enable Content Trust and pull the image we just pushed.
+Now, let's re-enable Content Trust and pull the image we just pushed.
 
 ```
 pvn@gyarados /home/pvn> export DOCKER_CONTENT_TRUST=1
@@ -142,7 +142,7 @@ no trust data available
 
 Again, this pull fails because the image is not signed.
 
-However, now that we have Content Trust enabled, we can re-push the image and Engine will create the trust data for us (again, use the -D flag if you want to see additional detail).  
+However, now that we have Content Trust enabled, we can re-push the image and Engine will create the trust data for us (again, use the `-D` flag if you want to see additional detail).  
 
 ```
 pvn@gyarados /home/pvn> docker tag hello-world <username>/trust-test:signed
