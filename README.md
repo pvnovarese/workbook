@@ -1,5 +1,5 @@
 # workbook
-I keep notes and doodles here
+I keep notes and doodles here.  Sometimes these notes and doodles will evolve into proper kbase articles at https://success.docker.com or elsewhere.
 
 LICENSE
 -------------
