@@ -1,3 +1,5 @@
+*NOTE: This guide was written with 1.10.0-dev (experimental).  The 1.10 release has some slightly different behavior.  I will update the guide shortly.*
+
 Current configuration:
 
 ```
