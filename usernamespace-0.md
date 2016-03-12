@@ -1,5 +1,7 @@
 ## First steps with user namespaces in Docker 1.11 experimental
 
+*updated 2016-03-11*
+
 Current configuration:
 
 ```
