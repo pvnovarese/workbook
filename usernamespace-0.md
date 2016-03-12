@@ -107,7 +107,7 @@ drwx------. 17 root   root   4096 Mar 11 09:25 volumes/
 pvn@gyarados /home/pvn>
 ```
 
-OK, so this remapped engine will basically operate in a new environment (in the 5000.5000 directory). We can look in there and see it's essentially a new /var/lib/docker.
+OK, so this remapped engine will basically operate in a new environment (in the 5000.5000 directory).  Every remapping will get its own directory (format XXX.YYY where XXX is the starting UID and YYY is the starting GID of the remapping range) - we can look in there and see it's essentially a new /var/lib/docker.
 
 ```
 pvn@gyarados /home/pvn> sudo su -
