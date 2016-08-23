@@ -55,16 +55,7 @@ OK, the first thing we'll do is start a registry. Since we aren't going to bothe
 docker@boot2docker:~$ sudo /etc/init.d/docker stop
 docker@boot2docker:~$ sudo dockerd --insecure-registry 127.0.0.1:5000 &
 INFO[0000] libcontainerd: new containerd process, pid: 2544
-WARN[0000] containerd: low RLIMIT_NOFILE changing to max  current=1024 max=4096
-INFO[0001] [graphdriver] using prior storage driver "aufs"
-INFO[0001] Graph migration to content-addressability took 0.00 seconds
-WARN[0001] Your kernel does not support cgroup blkio weight
-WARN[0001] Your kernel does not support cgroup blkio weight_device
-INFO[0001] Loading containers: start.
-WARN[0001] Could not load necessary modules for IPSEC rules: Running modprobe xfrm_user failed with message: `modprobe: module xfrm_user not found in modules.dep`, error: exit status 1
-INFO[0001] Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address
-
-INFO[0001] Loading containers: done.
+...
 INFO[0001] Daemon has completed initialization
 INFO[0001] Docker daemon                                 commit=23cf638 graphdriver=aufs version=1.12.1
 INFO[0001] API listen on /var/run/docker.sock
