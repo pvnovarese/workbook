@@ -1,4 +1,4 @@
-## DIY Demo for User Namespace Remapping and Seccomp Profiles in Docker Engine 1.12
+## DIY Demo for User Namespace Remapping in Docker Engine 1.12
 
 
 Let's use a pristine machine for experimenting.  Using docker-machine will be better than using Docker for Mac or Docker for Windows for this lab since we'll need to ssh into the virtual machine.
